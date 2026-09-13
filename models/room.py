@@ -79,6 +79,32 @@ def save_rooms(rooms):
         print(f"Error saving rooms: {error}")
 
 
+# Load rooms from a file
+def load_rooms():
+    rooms = {}
+
+    try:
+        with open("Data/rooms.txt", "r") as file:
+            for line in file:
+                room_number, room_type, price, available = line.strip().split(",")
+
+                room = Room(
+                    room_number,
+                    room_type,
+                    float(price)
+                )
+
+                room.available = available == "True"
+
+                rooms[room_number] = room
+
+    except FileNotFoundError:
+        print("No room file found. Starting with no rooms.")
+
+    return rooms
+
+
+
 
 
 
