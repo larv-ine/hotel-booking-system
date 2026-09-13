@@ -57,18 +57,23 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Test Cases – Hotel (Check-in / Check-out / File Handling)
-**Owner:** [Check-in/out person's name]
+**Owner:** [Larvine Mutuku] 
+
+## Test Cases – Hotel (Check-in / Check-out / Booking / File Handling)
+**Owner:** [Your name]
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
 | TC1 | check_in | Normal check-in on a valid booking | booking_id="B1" (status="Booked") | Booking becomes "Checked-In", room becomes "Occupied" |
-| TC2 | check_in | Attempt to check in a booking that's already checked in | booking_id="B1" (status="Checked-In") | Error: guest already checked in |
-| TC3 | check_out | Normal check-out on a checked-in booking | booking_id="B1" (status="Checked-In") | Booking becomes "Checked-Out", room becomes "Available", total cost returned |
-| TC4 | check_out | Attempt to check out a booking that was never checked in | booking_id="B1" (status="Booked") | Error: guest is not currently checked in |
-| TC5 | load_all / save_all | Data persists after restart | add a room, save, close app, reopen app | Previously added room is still present on reload |
+| TC2 | check_in | Attempt to check in a booking that's already checked in | booking_id="B1" (status="Checked-In") | Error: "Guest is already checked in for this booking" |
+| TC3 | check_in | Attempt to check in with a booking ID that doesn't exist | booking_id="B999" | Error: "Booking B999 not found" |
+| TC4 | check_out | Normal check-out on a checked-in booking | booking_id="B1" (status="Checked-In") | Booking becomes "Checked-Out", room becomes "Available", correct total cost returned |
+| TC5 | check_out | Attempt to check out a booking that was never checked in | booking_id="B1" (status="Booked") | Error: "Guest is not currently checked in for this booking" |
+| TC6 | create_booking | Attempt to create a booking with a duplicate booking ID | booking_id="B1" used a second time | Error: "Booking ID B1 already exists" |
+| TC7 | save_all / load_all | Data persists after restart | Add a room, save, close app, reopen app | Previously added room is still present on reload |
+| TC8 | load_all | App starts for the first time with no data files present | No rooms.txt/guests.txt/bookings.txt exist yet | App starts normally with empty lists, no crash | 
 
-*(Check-in/out owner: add/adjust rows to match the exact validation you implement.)*
 
----
 
-*Note: This Test Plan should be finalized before final testing (Stage 3). Once the application is complete, execute every test case above against the real running app and record the results in `test_results.md`.*
+
+
