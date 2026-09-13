@@ -8,7 +8,7 @@ BOOKINGS_FILE = "data/bookings.txt"
 
 
 class Hotel:
-    """Manages rooms, guests, and bookings for the hotel."""
+    """Manages all rooms, guests, and bookings for the hotel."""
 
     def __init__(self):
         self.rooms = []
@@ -25,6 +25,7 @@ class Hotel:
     def display_all_rooms(self):
         if not self.rooms:
             print("No rooms found.")
+            return
         for r in self.rooms:
             r.display_details()
 
@@ -32,6 +33,7 @@ class Hotel:
         available = [r for r in self.rooms if r.is_available()]
         if not available:
             print("No available rooms.")
+            return
         for r in available:
             r.display_details()
 
@@ -55,13 +57,17 @@ class Hotel:
 
     # ---------- BOOKINGS ----------
     def create_booking(self, booking_id, guest_id, room_number, check_in, check_out):
+        # Prevent two bookings from using the same booking ID
+        if any(b.booking_id == booking_id for b in self.bookings):
+            raise ValueError(f"Booking ID {booking_id} already exists")
+
         room = self.find_room(room_number)
         if room is None:
-            raise ValueError("Room not found")
+            raise ValueError(f"Room {room_number} not found")
         if not room.is_available():
             raise ValueError(f"Room {room_number} is not available")
         if self.search_guest(guest_id) is None:
-            raise ValueError("Guest not found")
+            raise ValueError(f"Guest {guest_id} not found")
 
         booking = Booking(booking_id, guest_id, room_number, check_in, check_out)
         self.bookings.append(booking)
@@ -71,6 +77,7 @@ class Hotel:
     def display_bookings(self):
         if not self.bookings:
             print("No bookings found.")
+            return
         for b in self.bookings:
             b.display_details()
 
@@ -80,16 +87,20 @@ class Hotel:
                 return b
         return None
 
+    # ---------- CHECK-IN / CHECK-OUT ----------
     def check_in(self, booking_id):
         booking = self.find_booking(booking_id)
         if booking is None:
-            raise ValueError("Booking not found")
+            raise ValueError(f"Booking {booking_id} not found")
         if booking.status == "Checked-In":
             raise ValueError("Guest already checked in")
         if booking.status == "Checked-Out":
             raise ValueError("This booking has already been checked out")
 
         room = self.find_room(booking.room_number)
+        if room is None:
+            raise ValueError("The room for this booking no longer exists")
+
         room.status = "Occupied"
         booking.status = "Checked-In"
         return booking
@@ -97,11 +108,14 @@ class Hotel:
     def check_out(self, booking_id):
         booking = self.find_booking(booking_id)
         if booking is None:
-            raise ValueError("Booking not found")
+            raise ValueError(f"Booking {booking_id} not found")
         if booking.status != "Checked-In":
             raise ValueError("Guest is not currently checked in")
 
         room = self.find_room(booking.room_number)
+        if room is None:
+            raise ValueError("The room for this booking no longer exists")
+
         total_cost = booking.calculate_total_cost(room.price_per_night)
         room.status = "Available"
         booking.status = "Checked-Out"
@@ -109,15 +123,18 @@ class Hotel:
 
     # ---------- FILE HANDLING ----------
     def save_all(self):
-        with open(ROOMS_FILE, "w") as f:
-            for r in self.rooms:
-                f.write(r.to_file_line())
-        with open(GUESTS_FILE, "w") as f:
-            for g in self.guests:
-                f.write(g.to_file_line())
-        with open(BOOKINGS_FILE, "w") as f:
-            for b in self.bookings:
-                f.write(b.to_file_line())
+        try:
+            with open(ROOMS_FILE, "w") as f:
+                for r in self.rooms:
+                    f.write(r.to_file_line())
+            with open(GUESTS_FILE, "w") as f:
+                for g in self.guests:
+                    f.write(g.to_file_line())
+            with open(BOOKINGS_FILE, "w") as f:
+                for b in self.bookings:
+                    f.write(b.to_file_line())
+        except OSError as e:
+            print(f"Warning: could not save data. {e}")
 
     def load_all(self):
         try:

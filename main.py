@@ -1,3 +1,4 @@
+
 from hotel import Hotel
 from models.room import Room
 from models.guest import Guest
@@ -122,6 +123,9 @@ def main():
             break
         else:
             print("Invalid choice. Please select a valid menu option.")
+
+        if choice != "10":
+            input("\nPress Enter to continue...")
 
 
 if __name__ == "__main__":
