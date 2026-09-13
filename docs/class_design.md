@@ -91,7 +91,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Class 4: Hotel
-**Owner:** [Check-in/out person's name]
+**Owner:** Larvine Mutuku
 
 **Purpose:** The central manager class. Holds all rooms, guests, and bookings, applies business rules (e.g. preventing double-booking), and handles saving/loading all data to and from files.
 
