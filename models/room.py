@@ -13,6 +13,14 @@ class Room:
         print(f"Price per Night: ${self.price:.2f}")
         print(f"Status: {status}")
 
+    def make_unavailable(self):
+        self.available = False
+
+    def make_available(self):
+        self.available = True
+
+
+
 
 
 
