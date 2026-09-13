@@ -34,3 +34,8 @@ class Booking:
     def from_file_line(line):
         parts = line.strip().split(",")
         return Booking(*parts)
+
+    def __str__(self):
+         return (f"Booking ID: {self.booking_id} | Guest: {self.guest_id} |" \
+                f" Room: {self.room_number} |Dates: {self.check_in_date} to "
+                f"{self.check_out_date} | Status: {self.status}")
