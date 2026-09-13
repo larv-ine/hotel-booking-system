@@ -51,6 +51,17 @@ def display_all_rooms(rooms):
     for room in rooms.values():
         room.display_room()
 
+# Display available rooms
+def display_available_rooms(rooms):
+    found_available_room = False
+
+    for room in rooms.values():
+        if room.available:
+            room.display_room()
+            found_available_room = True
+
+    if not found_available_room:
+        print("No available rooms at the moment.")
 
 
 
