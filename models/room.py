@@ -28,6 +28,32 @@ class Room:
     def make_available(self):
         self.available = True
 
+#Add a new room
+def add_room(rooms, room_number, room_type, price):
+    if room_number in rooms:
+        print("A room with this room number already exists.")
+        return
+
+    try:
+        new_room = Room(room_number, room_type, price)
+        rooms[room_number] = new_room
+        print(f"Room {room_number} added successfully.")
+
+    except ValueError as error:
+        print(error)
+
+# Display all rooms.
+def display_all_rooms(rooms):
+    if not rooms:
+        print("No rooms available.")
+        return
+
+    for room in rooms.values():
+        room.display_room()
+
+
+
+
 
 
 
