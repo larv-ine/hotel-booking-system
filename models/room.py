@@ -63,6 +63,21 @@ def display_available_rooms(rooms):
     if not found_available_room:
         print("No available rooms at the moment.")
 
+# Save rooms to a file
+def save_rooms(rooms):
+    try:
+        with open("Data/rooms.txt", "w") as file:
+            for room in rooms.values():
+                file.write(
+                    f"{room.room_number},{room.room_type},"
+                    f"{room.price},{room.available}\n"
+                )
+
+        print("Rooms saved successfully.")
+
+    except OSError as error:
+        print(f"Error saving rooms: {error}")
+
 
 
 
