@@ -56,11 +56,8 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 ---
 
-## Test Cases – Hotel (Check-in / Check-out / File Handling)
-**Owner:** [Larvine Mutuku] 
-
 ## Test Cases – Hotel (Check-in / Check-out / Booking / File Handling)
-**Owner:** [Your name]
+**Owner:** [Larvine Mutuku]
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
