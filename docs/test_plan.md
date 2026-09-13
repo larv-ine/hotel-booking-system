@@ -52,7 +52,6 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC4 | create_booking | Attempt to book with a guest that doesn't exist | guest="G999" | Error: guest not found |
 | TC5 | calculate_total_cost | Check-out date before check-in date | check_in="2026-08-25", check_out="2026-08-20" | Error: check-out must be after check-in |
 
-*(Bookings owner: add/adjust rows to match the exact validation you implement.)*
 
 ---
 
@@ -67,8 +66,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC4 | check_out | Attempt to check out a booking that was never checked in | booking_id="B1" (status="Booked") | Error: guest is not currently checked in |
 | TC5 | load_all / save_all | Data persists after restart | add a room, save, close app, reopen app | Previously added room is still present on reload |
 
-*(Check-in/out owner: add/adjust rows to match the exact validation you implement.)*
 
 ---
 
-*Note: This Test Plan should be finalized before final testing (Stage 3). Once the application is complete, execute every test case above against the real running app and record the results in `test_results.md`.*
+
