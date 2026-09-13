@@ -52,7 +52,6 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC4 | create_booking | Attempt to book with a guest that doesn't exist | guest="G999" | Error: guest not found |
 | TC5 | calculate_total_cost | Check-out date before check-in date | check_in="2026-08-25", check_out="2026-08-20" | Error: check-out must be after check-in |
 
-*(Bookings owner: add/adjust rows to match the exact validation you implement.)*
 
 ---
 
@@ -69,6 +68,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC6 | create_booking | Attempt to create a booking with a duplicate booking ID | booking_id="B1" used a second time | Error: "Booking ID B1 already exists" |
 | TC7 | save_all / load_all | Data persists after restart | Add a room, save, close app, reopen app | Previously added room is still present on reload |
 | TC8 | load_all | App starts for the first time with no data files present | No rooms.txt/guests.txt/bookings.txt exist yet | App starts normally with empty lists, no crash | 
+
 
 
 
