@@ -1,5 +1,14 @@
 class Room:
     def __init__(self, room_number, room_type, price):
+        if not room_number:
+            raise ValueError("Room number cannot be empty.")
+
+        if not room_type:
+            raise ValueError("Room type cannot be empty.")
+
+        if price < 0:
+            raise ValueError("Room price cannot be negative.")
+
         self.room_number = room_number
         self.room_type = room_type
         self.price = price
@@ -18,6 +27,7 @@ class Room:
 
     def make_available(self):
         self.available = True
+
 
 
 
