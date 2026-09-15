@@ -5,8 +5,12 @@
 -  Susan Muthoni
 - Hazel Awino
 - Yusra Haruna 
+
 **Date:** September 2026
+
+
 ## Selected Project
+
 Project 4 – Hotel Guest Check-In & Room Booking System
 
 ---
