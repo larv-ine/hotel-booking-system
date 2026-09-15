@@ -125,7 +125,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Class Diagram
-*(Insert `class_diagram.png` here once created in draw.io. It should show:)*
+![Class Diagram](class_diagram.png)
 - Hotel → manages → Room
 - Hotel → manages → Guest
 - Hotel → manages → Booking
