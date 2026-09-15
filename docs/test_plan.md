@@ -16,11 +16,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Test Cases – Room
-**Owner:** SUSAN NJERI MUTHONI
-
-|## Test Cases – Room
-
-**Owner:** SUSAN NJERI MUTHONI
+**Owner:** Susan Njeri Muthoni
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
@@ -29,12 +25,12 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC3 | `add_room` | Try to add a room with a negative price | room_number="102", room_type="Double", price_per_night=-50 | Message shown: "Room price cannot be negative." |
 | TC4 | `add_room` | Try to add a room with no room number | room_number="", room_type="Single", price_per_night=80 | Message shown: "Room number cannot be empty." |
 | TC5 | `display_available_rooms` | No rooms are currently available | all rooms have available=False | Message shown: "No available rooms at the moment." |
-*(Rooms owner: add/adjust rows to match the exact validation you implement.)*
+
 
 ---
 
 ## Test Cases – Guest
-**Owner:** [Guests person's name]
+**Owner:** Yusra Haruna
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
@@ -63,7 +59,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Test Cases – Hotel (Check-in / Check-out / Booking / File Handling)
-**Owner:** [Larvine Mutuku]
+**Owner:** Larvine Mutuku
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
