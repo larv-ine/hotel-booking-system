@@ -1,10 +1,13 @@
 # Class Design Document
 
 ## Team Members
--Larvine Mutuku 
--Susan Njeri
--Yusra Haruna
--Hazel Awino
+- Larvine Mutuku
+-  Susan Muthoni
+- Hazel Awino
+- Yusra Haruna 
+
+
+**Date:** September 2026
 
 ## Selected Project
 Project 4 – Hotel Guest Check-In & Room Booking System
@@ -12,33 +15,40 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Class 1: Room
-**Owner:** [Rooms person's name]
+**Owner:** SUSAN NJERI MUTHONI
 
-**Purpose:** Represents a single hotel room and tracks its availability status.
+**Purpose:** Represents a hotel room and stores its room number, room type, price per night, and current availability. The class also allows the room to be marked as available or unavailable.
 
 ### Attributes
 | Attribute | Data Type | Description |
 |---|---|---|
-| room_number | str | Unique identifier for the room |
-| room_type | str | Category of room, e.g. Single, Double, Suite |
-| price_per_night | float | Cost to stay one night in this room |
-| status | str | Current state: "Available", "Booked", or "Occupied" |
+| room_number | str | Unique number used to identify the hotel room |
+| room_type | str | Category of the room, such as Single, Double, or Suite |
+| price_per_night | float | Cost of staying in the room for one night |
+| available | bool | Indicates the availability of the room. True means the room is available, while False means it is unavailable or occupied |
 
 ### Methods
 | Method | Parameters | Purpose |
 |---|---|---|
-| `__init__` | room_number, room_type, price_per_night, status | Creates a new Room object and validates the input |
-| `is_available` | none | Returns True if the room's status is "Available" |
-| `display_details` | none | Prints the room's information to the screen |
-| `to_file_line` | none | Converts the room's data into a line of text for saving to a file |
-| `from_file_line` | line (str) | Rebuilds a Room object from a saved line of text |
+| `__init__` | room_number, room_type, price_per_night | Creates a new Room object. It validates that the room number and room type are not empty and that the price per night is not negative. New rooms are available by default. |
+| `display_room` | none | Displays the room number, room type, price per night, and current availability status |
+| `make_unavailable` | none | Changes the room's availability to False when the room becomes unavailable or occupied |
+| `make_available` | none | Changes the room's availability to True when the room becomes available again |
 
-*(Rooms owner: add any extra methods/attributes you introduce, e.g. max_occupancy, and describe them here.)*
+### Room Management Functions
+
+| Function | Parameters | Purpose |
+|---|---|---|
+| `add_room` | rooms, room_number, room_type, price_per_night | Creates a new Room object and adds it to the rooms dictionary. It also prevents duplicate room numbers. |
+| `display_all_rooms` | rooms | Displays all rooms stored in the system |
+| `display_available_rooms` | rooms | Displays only rooms whose `available` value is True |
+| `save_rooms` | rooms | Saves the room number, room type, price per night, and availability of each room to `Data/rooms.txt` |
+| `load_rooms` | none | Reads room information from `Data/rooms.txt`, recreates the Room objects, restores their availability status, and returns the rooms dictionary |
 
 ---
 
 ## Class 2: Guest
-**Owner:** [Yusra Haruna]
+**Owner:** [Guests person's name]
 
 **Purpose:** Represents a hotel guest and their contact details.
 
@@ -58,13 +68,9 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | `to_file_line` | none | Converts the guest's data into a line of text for saving to a file |
 | `from_file_line` | line (str) | Rebuilds a Guest object from a saved line of text |
 
-**Validation added in `__init__`:**
-- guest_id cannot be empty
-- name cannot be empty
-- phone cannot be empty and must contain digits only
-- email cannot be empty and must contain "@"
+*(Guests owner: add any extra methods/attributes you introduce here.)*
 
-All validation failures raise `ValueError` with a specific message, caught and displayed by `register_guest_menu` in `main.py`.
+---
 
 ## Class 3: Booking
 **Owner:** [Bookings person's name]
@@ -95,42 +101,40 @@ All validation failures raise `ValueError` with a specific message, caught and d
 ---
 
 ## Class 4: Hotel
-**Owner:** Larvine Mutuku
+**Owner:** [Larvine Mutuku]
 
-**Purpose:** The central manager class. Holds all rooms, guests, and bookings, applies business rules (e.g. preventing double-booking), and handles saving/loading all data to and from files.
+**Purpose:** The central manager class. Holds all rooms, guests, and bookings, applies business rules (e.g. preventing double-booking and duplicate IDs), coordinates check-in/check-out, and handles saving/loading all data to and from files.
 
 ### Attributes
 | Attribute | Data Type | Description |
 |---|---|---|
-| rooms | list of Room | All rooms in the hotel |
+| rooms | list of Room | All rooms currently in the hotel |
 | guests | list of Guest | All registered guests |
 | bookings | list of Booking | All bookings made |
 
 ### Methods
 | Method | Parameters | Purpose |
 |---|---|---|
-| `__init__` | none | Initialises empty lists and loads any previously saved data |
+| `__init__` | none | Initialises empty lists and loads any previously saved data from file |
 | `add_room` | room | Adds a new room, prevents duplicate room numbers |
 | `display_all_rooms` | none | Prints every room |
 | `display_available_rooms` | none | Prints only rooms with status "Available" |
 | `find_room` | room_number | Returns the Room object matching the given number, or None |
 | `register_guest` | guest | Adds a new guest, prevents duplicate guest IDs |
 | `search_guest` | guest_id | Returns the Guest object matching the given ID, or None |
-| `create_booking` | booking_id, guest_id, room_number, check_in, check_out | Validates room availability and guest existence, then creates a Booking and marks the room "Booked" |
+| `create_booking` | booking_id, guest_id, room_number, check_in, check_out | Validates the booking ID is unique, the room exists and is available, and the guest exists. Creates a Booking and marks the room "Booked" |
 | `display_bookings` | none | Prints every booking |
 | `find_booking` | booking_id | Returns the Booking object matching the given ID, or None |
-| `check_in` | booking_id | Marks a booking as "Checked-In" and the room as "Occupied" |
-| `check_out` | booking_id | Calculates total cost, marks booking "Checked-Out", frees the room |
-| `save_all` | none | Writes all rooms, guests, and bookings to their data files |
-| `load_all` | none | Reads all rooms, guests, and bookings from their data files on startup |
+| `check_in` | booking_id | Validates the booking exists, hasn't already been checked in/out, and its room still exists. Marks booking "Checked-In" and room "Occupied" |
+| `check_out` | booking_id | Validates the booking exists, guest is currently checked in, and the room still exists. Calculates total cost, marks booking "Checked-Out", frees the room |
+| `save_all` | none | Writes all rooms, guests, and bookings to their data files; catches file-write errors |
+| `load_all` | none | Reads all rooms, guests, and bookings from their data files on startup; handles missing files gracefully |
 
-*(Check-in/out owner: add any extra methods/attributes you introduce here.)*
 
 ---
 
 ## Class Diagram
-*![Class Diagram](class_diagram.png)
-- Hotel → manages → Room
+![Class Diagram](class_diagram.png)
 - Hotel → manages → Room
 - Hotel → manages → Guest
 - Hotel → manages → Booking
