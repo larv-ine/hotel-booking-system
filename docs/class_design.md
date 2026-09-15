@@ -91,36 +91,35 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Class 4: Hotel
-**Owner:** [Check-in/out person's name]
+**Owner:** [Larvine Mutuku]
 
-**Purpose:** The central manager class. Holds all rooms, guests, and bookings, applies business rules (e.g. preventing double-booking), and handles saving/loading all data to and from files.
+**Purpose:** The central manager class. Holds all rooms, guests, and bookings, applies business rules (e.g. preventing double-booking and duplicate IDs), coordinates check-in/check-out, and handles saving/loading all data to and from files.
 
 ### Attributes
 | Attribute | Data Type | Description |
 |---|---|---|
-| rooms | list of Room | All rooms in the hotel |
+| rooms | list of Room | All rooms currently in the hotel |
 | guests | list of Guest | All registered guests |
 | bookings | list of Booking | All bookings made |
 
 ### Methods
 | Method | Parameters | Purpose |
 |---|---|---|
-| `__init__` | none | Initialises empty lists and loads any previously saved data |
+| `__init__` | none | Initialises empty lists and loads any previously saved data from file |
 | `add_room` | room | Adds a new room, prevents duplicate room numbers |
 | `display_all_rooms` | none | Prints every room |
 | `display_available_rooms` | none | Prints only rooms with status "Available" |
 | `find_room` | room_number | Returns the Room object matching the given number, or None |
 | `register_guest` | guest | Adds a new guest, prevents duplicate guest IDs |
 | `search_guest` | guest_id | Returns the Guest object matching the given ID, or None |
-| `create_booking` | booking_id, guest_id, room_number, check_in, check_out | Validates room availability and guest existence, then creates a Booking and marks the room "Booked" |
+| `create_booking` | booking_id, guest_id, room_number, check_in, check_out | Validates the booking ID is unique, the room exists and is available, and the guest exists. Creates a Booking and marks the room "Booked" |
 | `display_bookings` | none | Prints every booking |
 | `find_booking` | booking_id | Returns the Booking object matching the given ID, or None |
-| `check_in` | booking_id | Marks a booking as "Checked-In" and the room as "Occupied" |
-| `check_out` | booking_id | Calculates total cost, marks booking "Checked-Out", frees the room |
-| `save_all` | none | Writes all rooms, guests, and bookings to their data files |
-| `load_all` | none | Reads all rooms, guests, and bookings from their data files on startup |
+| `check_in` | booking_id | Validates the booking exists, hasn't already been checked in/out, and its room still exists. Marks booking "Checked-In" and room "Occupied" |
+| `check_out` | booking_id | Validates the booking exists, guest is currently checked in, and the room still exists. Calculates total cost, marks booking "Checked-Out", frees the room |
+| `save_all` | none | Writes all rooms, guests, and bookings to their data files; catches file-write errors |
+| `load_all` | none | Reads all rooms, guests, and bookings from their data files on startup; handles missing files gracefully |
 
-*(Check-in/out owner: add any extra methods/attributes you introduce here.)*
 
 ---
 

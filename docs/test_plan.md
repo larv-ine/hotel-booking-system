@@ -1,10 +1,10 @@
 # Test Plan
 
 ## Team Members
-- [Name 1]
-- [Name 2]
-- [Name 3]
-- [Name 4]
+- Larvine Mutuku
+- Susan Njeri
+- Hazel Awino
+- Yusra Haruna
 
 ## Selected Project
 Project 4 – Hotel Guest Check-In & Room Booking System
@@ -22,22 +22,19 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC4 | add_room | Empty room number rejected | room_number="" | Error: room number cannot be empty |
 | TC5 | display_available_rooms | No rooms currently available | all existing rooms have status "Booked" or "Occupied" | "No available rooms." message shown |
 
-*(Rooms owner: add/adjust rows to match the exact validation you implement.)*
 
 ---
 
 ## Test Cases – Guest
-**Owner:** [Guests person's name]
+**Owner:** Yusra Haruna
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
 | TC1 | register_guest | Normal valid guest is registered | guest_id="G1", name="Alice", phone="0551234567", email="alice@example.com" | Guest registered successfully |
-| TC2 | register_guest | Duplicate guest ID rejected | guest_id="G1" registered a second time | Error: guest ID already exists |
-| TC3 | register_guest | Empty guest ID rejected | guest_id="" | Error: guest ID cannot be empty |
-| TC4 | search_guest | Search for an existing guest | guest_id="G1" | Guest's details displayed |
+| TC2 | register_guest | Duplicate guest ID rejected | guest_id="G1" registered a second time | Error: "Guest ID G1 already exists" |
+| TC3 | register_guest (Guest.__init__) | Empty guest ID rejected | guest_id="" | Error: "Guest ID cannot be empty." |
+| TC4 | register_guest (Guest.__init__) | Invalid email rejected | email="not-an-email" (no "@") | Error: "Email must be a valid address (must contain '@')." |
 | TC5 | search_guest | Search for a guest that doesn't exist | guest_id="G999" | "Guest not found." message shown |
-
-*(Guests owner: add/adjust rows to match the exact validation you implement.)*
 
 ---
 
