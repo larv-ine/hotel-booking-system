@@ -1,11 +1,11 @@
 # Test Plan
 
 ## Team Members
-- [Name 1]
-- [Name 2]
-- [Name 3]
-- [Name 4]
-
+ - Larvine Mutuku
+-  Susan Muthoni
+- Hazel Awino
+- Yusra Haruna 
+**Date:** September 2026
 ## Selected Project
 Project 4 – Hotel Guest Check-In & Room Booking System
 
@@ -22,7 +22,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC4 | add_room | Empty room number rejected | room_number="" | Error: room number cannot be empty |
 | TC5 | display_available_rooms | No rooms currently available | all existing rooms have status "Booked" or "Occupied" | "No available rooms." message shown |
 
-*(Rooms owner: add/adjust rows to match the exact validation you implement.)*
+
 
 ---
 
@@ -37,7 +37,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC4 | search_guest | Search for an existing guest | guest_id="G1" | Guest's details displayed |
 | TC5 | search_guest | Search for a guest that doesn't exist | guest_id="G999" | "Guest not found." message shown |
 
-*(Guests owner: add/adjust rows to match the exact validation you implement.)*
+
 
 ---
 

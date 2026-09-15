@@ -1,11 +1,11 @@
 # Class Design Document
 
 ## Team Members
-- [Name 1]
-- [Name 2]
-- [Name 3]
-- [Name 4]
-
+- Larvine Mutuku
+-  Susan Muthoni
+- Hazel Awino
+- Yusra Haruna 
+**Date:** September 2026
 ## Selected Project
 Project 4 – Hotel Guest Check-In & Room Booking System
 
