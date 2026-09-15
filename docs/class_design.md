@@ -15,28 +15,35 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Class 1: Room
-**Owner:** [Rooms person's name]
+**Owner:** SUSAN NJERI MUTHONI
 
-**Purpose:** Represents a single hotel room and tracks its availability status.
+**Purpose:** Represents a hotel room and stores its room number, room type, price per night, and current availability. The class also allows the room to be marked as available or unavailable.
 
 ### Attributes
 | Attribute | Data Type | Description |
 |---|---|---|
-| room_number | str | Unique identifier for the room |
-| room_type | str | Category of room, e.g. Single, Double, Suite |
-| price_per_night | float | Cost to stay one night in this room |
-| status | str | Current state: "Available", "Booked", or "Occupied" |
+| room_number | str | Unique number used to identify the hotel room |
+| room_type | str | Category of the room, such as Single, Double, or Suite |
+| price_per_night | float | Cost of staying in the room for one night |
+| available | bool | Indicates the availability of the room. True means the room is available, while False means it is unavailable or occupied |
 
 ### Methods
 | Method | Parameters | Purpose |
 |---|---|---|
-| `__init__` | room_number, room_type, price_per_night, status | Creates a new Room object and validates the input |
-| `is_available` | none | Returns True if the room's status is "Available" |
-| `display_details` | none | Prints the room's information to the screen |
-| `to_file_line` | none | Converts the room's data into a line of text for saving to a file |
-| `from_file_line` | line (str) | Rebuilds a Room object from a saved line of text |
+| `__init__` | room_number, room_type, price_per_night | Creates a new Room object. It validates that the room number and room type are not empty and that the price per night is not negative. New rooms are available by default. |
+| `display_room` | none | Displays the room number, room type, price per night, and current availability status |
+| `make_unavailable` | none | Changes the room's availability to False when the room becomes unavailable or occupied |
+| `make_available` | none | Changes the room's availability to True when the room becomes available again |
 
-*(Rooms owner: add any extra methods/attributes you introduce, e.g. max_occupancy, and describe them here.)*
+### Room Management Functions
+
+| Function | Parameters | Purpose |
+|---|---|---|
+| `add_room` | rooms, room_number, room_type, price_per_night | Creates a new Room object and adds it to the rooms dictionary. It also prevents duplicate room numbers. |
+| `display_all_rooms` | rooms | Displays all rooms stored in the system |
+| `display_available_rooms` | rooms | Displays only rooms whose `available` value is True |
+| `save_rooms` | rooms | Saves the room number, room type, price per night, and availability of each room to `Data/rooms.txt` |
+| `load_rooms` | none | Reads room information from `Data/rooms.txt`, recreates the Room objects, restores their availability status, and returns the rooms dictionary |
 
 ---
 

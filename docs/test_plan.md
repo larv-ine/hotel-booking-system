@@ -16,17 +16,20 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Test Cases – Room
-**Owner:** [Rooms person's name]
+**Owner:** SUSAN NJERI MUTHONI
+
+|## Test Cases – Room
+
+**Owner:** SUSAN NJERI MUTHONI
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
-| TC1 | add_room | Normal valid room is added | room_number="101", type="Single", price=80 | Room added successfully |
-| TC2 | add_room | Duplicate room number rejected | room_number="101" added a second time | Error: room already exists |
-| TC3 | add_room | Negative price rejected | price=-50 | Error: price cannot be negative |
-| TC4 | add_room | Empty room number rejected | room_number="" | Error: room number cannot be empty |
-| TC5 | display_available_rooms | No rooms currently available | all existing rooms have status "Booked" or "Occupied" | "No available rooms." message shown |
-
-
+| TC1 | `add_room` | Add a room using valid information | room_number="101", room_type="Single", price_per_night=80 | Room 101 is added successfully |
+| TC2 | `add_room` | Try to add a room number that already exists | room_number="101" added again | Message shown: "A room with this room number already exists." |
+| TC3 | `add_room` | Try to add a room with a negative price | room_number="102", room_type="Double", price_per_night=-50 | Message shown: "Room price cannot be negative." |
+| TC4 | `add_room` | Try to add a room with no room number | room_number="", room_type="Single", price_per_night=80 | Message shown: "Room number cannot be empty." |
+| TC5 | `display_available_rooms` | No rooms are currently available | all rooms have available=False | Message shown: "No available rooms at the moment." |
+*(Rooms owner: add/adjust rows to match the exact validation you implement.)*
 
 ---
 
