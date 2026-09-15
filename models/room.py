@@ -26,11 +26,40 @@ class Room:
     def display_details(self):
         self.display_room()
 
+    # Allows Hotel class to check room availability
+    def is_available(self):
+        return self.available
+
     def make_unavailable(self):
         self.available = False
 
     def make_available(self):
         self.available = True
+
+
+    # Converts a Room object into one line of text for saving
+    def to_file_line(self):
+        return (
+            f"{self.room_number},{self.room_type},"
+            f"{self.price_per_night},{self.available}\n"
+        )
+
+     # Rebuilds a Room object from one saved line
+    @classmethod
+    def from_file_line(cls, line):
+        room_number, room_type, price_per_night, available = (
+            line.strip().split(",")
+        )
+
+        room = cls(
+            room_number,
+            room_type,
+            float(price_per_night)
+        )
+
+        room.available = available.strip().lower() in ["true", "available"]
+
+        return room
 
 
 # Add a new room
