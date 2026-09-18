@@ -2,13 +2,13 @@
 
 ## 1. Room Management Tests
 
-| Test ID       | Expected Output                         | Actual Output                | Pass/Fail | Comments                            |
-| :------------ | :-------------------------------------- | :--------------------------- | :-------- | :---------------------------------- |
-| **ROOM-TC01** | Room 101 added successfully             | Room 101 added successfully. | Pass      | Output matched the expected result. |
-| **ROOM-TC02** | Error message when room number is empty | __________________________   | ______    | __________________________          |
-| **ROOM-TC03** | Error message when room type is empty   | __________________________   | ______    | __________________________          |
-| **ROOM-TC04** | Error: Price cannot be negative         | __________________________   | ______    | __________________________          |
-| **ROOM-TC05** | Room availability changes correctly     | __________________________   | ______    | __________________________          |
+| Test ID       | Expected Output                         | Actual Output                             | Pass/Fail  | Comments                                          |
+| :------------ | :-------------------------------------- | :---------------------------              | :--------  | :----------------------------------               |
+| **ROOM-TC01** | Room 101 added successfully             | Room 101 added successfully.              | Pass       | Output matched the expected result.               |
+| **ROOM-TC02** | Error message when room number is empty | Room number cannot be empty.              | pass       | Empty room number rejected correctly.             |
+| **ROOM-TC03** | Error message when room type is empty   | Invalid input:Room type cannot be empty.  | Pass       | Empty room type rejected correctly.               |
+| **ROOM-TC04** | Error: Price cannot be negative         | Price cannot be negative.                 | Pass       | Negative room price rejeced correctly.            |
+| **ROOM-TC05** | Room availability changes correctly     | Room 101 became unavailable after booking.| pass       | Room availability changed correctly after booking.|
 
 ## 2. Guest Management Tests
 
