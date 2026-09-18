@@ -71,7 +71,7 @@ class Hotel:
 
         booking = Booking(booking_id, guest_id, room_number, check_in, check_out)
         self.bookings.append(booking)
-        room.status = "Booked"
+        room.make_unavailable()
         return booking
 
     def display_bookings(self):
@@ -100,8 +100,7 @@ class Hotel:
         room = self.find_room(booking.room_number)
         if room is None:
             raise ValueError("The room for this booking no longer exists")
-
-        room.status = "Occupied"
+        room.make_unavailable()
         booking.status = "Checked-In"
         return booking
 
@@ -117,7 +116,7 @@ class Hotel:
             raise ValueError("The room for this booking no longer exists")
 
         total_cost = booking.calculate_total_cost(room.price_per_night)
-        room.status = "Available"
+        room.make_available()
         booking.status = "Checked-Out"
         return total_cost
 
