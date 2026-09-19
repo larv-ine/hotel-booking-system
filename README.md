@@ -102,8 +102,6 @@ The `docs` folder contains the supporting project documentation:
 -Room class
 -Testing
 ### Yusra Haruna
-
-
 -Guest management functionality
 -Guest class
 -Input validation
