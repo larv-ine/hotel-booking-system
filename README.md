@@ -8,10 +8,10 @@ The system allows hotel staff to manage hotel information through a menu-based i
 
 ## Team Members
 
-* **Larvine Mutuku**
-* **[Susan Muthoni ]**
-* **[Yusra Haruna]**
-* **[ Hazel Awino]**
+* Larvine Mutuku
+* Susan Muthoni 
+* Yusra Haruna
+* Hazel Awino
 
 ## Main Features
 
