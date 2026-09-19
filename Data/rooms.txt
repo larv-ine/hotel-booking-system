@@ -1,3 +1,4 @@
-101,Single,50,True
-102,Double,80,False
-103,Suite,120,True
+101,Single,50.0,True
+102,Double,80.0,False
+103,Suite,120.0,True
+10,Suite,100.0,True
