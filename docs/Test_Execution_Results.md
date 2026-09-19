@@ -32,13 +32,13 @@
 
 ## 4. Hotel Management Tests
 
-| Test ID        | Expected Output                                  | Actual Output              | Pass/Fail | Comments                   |
-| :------------- | :----------------------------------------------- | :------------------------- | :-------- | :------------------------- |
-| **HOTEL-TC01** | Room added successfully                          | __________________________ | ______    | __________________________ |
-| **HOTEL-TC02** | Duplicate room ID is rejected                    | __________________________ | ______    | __________________________ |
-| **HOTEL-TC03** | Guest registered successfully                    | __________________________ | ______    | __________________________ |
-| **HOTEL-TC04** | Booking created successfully                     | __________________________ | ______    | __________________________ |
-| **HOTEL-TC05** | Already booked/unavailable room cannot be booked | __________________________ | ______    | __________________________
+| Test ID        | Expected Output                                  | Actual Output                             | Pass/Fail | Comments                   |
+| :------------- | :----------------------------------------------- | :-------------------------                | :-------- | :------------------------- |
+| **HOTEL-TC01** | Room added successfully                          | Room added successfully.                  | Pass      | Room was added successfully with valid details. |
+| **HOTEL-TC02** | Duplicate room ID is rejected                    | Invalid input: Room 201 already exists.   | Pass      | Duplicate room number was rejected correctly. |
+| **HOTEL-TC03** | Guest registered successfully                    | Guest registered successfully.            | Pass      | Guest was registered successfully with valid details.|
+| **HOTEL-TC04** | Booking created successfully                     | Booking created successfully.             | Pass      | Booking was created successfully for an available room. |
+| **HOTEL-TC05** | Already booked/unavailable room cannot be booked | Booking failed: Room 201 is not available.| Pass      | The system correctly prevented an already booked room from being booked again. |
 
 ## 5. Check-In / Check-Out Tests
 
