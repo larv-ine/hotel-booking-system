@@ -57,7 +57,9 @@
 | **FILE-TC03** | Booking information is saved to file | B3,G3,203,2026-10-9,2026-10-10,Booked | Pass | Correct format, booking data saved properly |
 | **FILE-TC04** | Information remains after restarting the application | Booking B3 shown correctly after restart (Guest G3, Room 203, 2026-10-9 to 2026-10-10, Status: Checked-In) | Pass | Booking information and its status persisted correctly across restart. |
 | **FILE-TC05** | Updated information is saved correctly | Updated booking information was saved successfully and the updated details were displayed after restarting the application. | Pass | Updated information persisted correctly after saving and restarting. |
-## 7. Exception Handling / Input Validation Test
+
+
+## 7. Exception Handling / Input Validation Tests
 
 | **Test ID** | **Expected Output** | **Actual Output** | **Pass/Fail** | **Comments** |
 | :--- | :--- | :--- | :--- | :--- |
@@ -66,4 +68,3 @@
 | **EX-TC03** | Invalid phone number is rejected | Phone number cannot be negative. | Pass | Invalid phone number was rejected correctly. |
 | **EX-TC04** | Invalid booking date is rejected | Invalid date format. | Pass | Invalid booking date format was rejected correctly. |
 | **EX-TC05** | Invalid menu option is handled without crashing | Invalid choice. Please select a valid menu option. | Pass | Invalid menu option was handled without crashing the application. |
-
