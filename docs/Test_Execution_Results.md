@@ -21,14 +21,19 @@
 | **GUEST-TC05** | Error for invalid email        | __________________________ | ______    | __________________________ |
 
 ## 3. Booking Tests
+|## Test Results – Booking
+**Owner:** Hazel Awino
 
-| Test ID       | Expected Output                              | Actual Output              | Pass/Fail | Comments                   |
-| :------------ | :------------------------------------------- | :------------------------- | :-------- | :------------------------- |
-| **BOOK-TC01** | Booking created successfully                 | __________________________ | ______    | __________________________ |
-| **BOOK-TC02** | Error for invalid date format                | __________________________ | ______    | __________________________ |
-| **BOOK-TC03** | Checkout date cannot be before check-in date | __________________________ | ______    | __________________________ |
-| **BOOK-TC04** | Correct number of nights is calculated       | __________________________ | ______    | __________________________ |
-| **BOOK-TC05** | Correct total stay cost is calculated        | __________________________ | ______    | __________________________ |
+| Test ID | Expected Output | Actual Output | Pass/Fail | Comments |
+|---|---|---|---|---|
+| TC1 | Booking object created successfully with all attributes set | | | |
+| TC2 | Error: "Booking ID cannot be empty!" | | | |
+| TC3 | Error: "Invalid date format! Date must be in YYYY-MM-DD" | | | |
+| TC4 | Error: "Check-out Date must be after Check-in date" | | | |
+| TC5 | Error: "Invalid booking status: Boked" | | | |
+| TC6 | Returns 500 (5 nights × 100) | | | |
+| TC7 | Error: "Price per night cannot be negative" | | | |
+| TC8 | Error: "Invalid Booking data in file" | | | |
 
 ## 4. Hotel Management Tests
 
