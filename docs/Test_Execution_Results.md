@@ -44,7 +44,7 @@
 
 | Test ID        | Expected Output                                   | Actual Output              | Pass/Fail | Comments                   |
 | :------------- | :------------------------------------------------ | :------------------------- | :-------- | :------------------------- |
-| **CHECK-TC01** | Guest successfully checked in                     | __________________________ | ______    | __________________________ |
+| **CHECK-TC01** | Guest successfully checked in                      __________________________ | ______    | __________________________ |
 | **CHECK-TC02** | Error when booking does not exist                 | __________________________ | ______    | __________________________ |
 | **CHECK-TC03** | Guest successfully checked out                    | __________________________ | ______    | __________________________ |
 | **CHECK-TC04** | Error when booking does not exist during checkout | __________________________ | ______    | __________________________ |
