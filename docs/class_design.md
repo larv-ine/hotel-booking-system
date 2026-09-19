@@ -41,7 +41,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Class 2: Guest
-**Owner:** [Guests person's name]
+**Owner:** Yusra Haruna
 
 **Purpose:** Represents a hotel guest and their contact details.
 
@@ -60,8 +60,6 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | `display_details` | none | Prints the guest's information to the screen |
 | `to_file_line` | none | Converts the guest's data into a line of text for saving to a file |
 | `from_file_line` | line (str) | Rebuilds a Guest object from a saved line of text |
-
-*(Guests owner: add any extra methods/attributes you introduce here.)*
 
 ---
 
