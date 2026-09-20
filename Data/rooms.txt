@@ -1,1 +1,2 @@
-
+101,single,300.0,True
+102,double,600.0,True

@@ -1,4 +1,2 @@
-11,lyne,223322,l.lyne@waeni.com
-G001,Haruna,67890234,haruna@gmail
-G3,Haruna Ndal,0555678932,olua@gmail.com
-9416,YUSRA HARUNA,58441081,y.haruna@alustudent.com
+G1,Susan,0703030303,susan@njeri.com
+G2,Amara,0712345678,amara@waeni.com
