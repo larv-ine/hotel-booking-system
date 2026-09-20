@@ -63,6 +63,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 ---
 
+
 ## Class 3: Booking
 **Owner:** Hazel Awino
 
@@ -83,7 +84,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | Method | Parameters | Purpose |
 |---|---|---|
 | `__init__` | booking_id, guest_id, room_number, check_in_date, check_out_date, status | Creates a new Booking object; validates that IDs are non-empty, dates are in the correct format, check-out is after check-in, and status is one of the allowed values |
-| `calculate_total_cost` | price_per_night | Returns the total stay cost (nights × price); raises an error if price_per_night is negative |
+| `calculate_total_cost` | price_per_night | Returns the total stay cost (nights ├ù price); raises an error if price_per_night is negative |
 | `display_details` | none | Prints the booking's information to the screen |
 | `to_file_line` | none | Converts the booking's data into a comma-separated line of text for saving to a file |
 | `from_file_line` | line (str) | Rebuilds a Booking object from a saved line of text; validates that the line has the correct number of fields before rebuilding |
@@ -96,7 +97,6 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | VALID_STATUSES | tuple | Allowed values for `status`, used to validate input in `__init__` |
 
 ---
-
 ## Class 4: Hotel
 **Owner:** [Check-in/out person's name]
 

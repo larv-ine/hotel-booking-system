@@ -45,7 +45,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 ---
 
-## ## Test Cases – Booking
+# ## Test Cases ΓÇô Booking
 **Owner:** Hazel Awino
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
@@ -55,10 +55,11 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 | TC3 | `__init__` | Invalid case: badly formatted date | check_in="20-09-2026" | Error: "Invalid date format! Date must be in YYYY-MM-DD" |
 | TC4 | `__init__` | Edge case: check-out date equal to check-in date | check_in="2026-09-20", check_out="2026-09-20" | Error: "Check-out Date must be after Check-in date" |
 | TC5 | `__init__` | Invalid case: invalid status value | status="Booked" | Error: "Invalid booking status: Boked" |
-| TC6 | `calculate_total_cost` | Normal valid cost calculation | check_in="2026-09-20", check_out="2026-09-25", price_per_night=100 | Returns 500 (5 nights × 100) |
+| TC6 | `calculate_total_cost` | Normal valid cost calculation | check_in="2026-09-20", check_out="2026-09-25", price_per_night=100 | Returns 500 (5 nights ├ù 100) |
 | TC7 | `calculate_total_cost` | Invalid case: negative price per night | price_per_night=-50 | Error: "Price per night cannot be negative" |
 | TC8 | `from_file_line` | Invalid case: malformed file line (wrong number of fields) | line="B1,G1,101\n" | Error: "Invalid Booking data in file" |
 
+---
 ---
 
 ## Test Cases – Hotel (Check-in / Check-out / Booking / File Handling)
