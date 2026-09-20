@@ -30,9 +30,9 @@
 | TC2 | Error: "Booking ID cannot be empty!" |"Booking ID cannot be empty!" |Pass |Tested through the app menu |
 | TC3 | Error: "Invalid date format! Date must be in YYYY-MM-DD" | "Invalid date format! Date must be in YYYY-MM-DD"| Pass |Tested through the app menu |
 | TC4 | Error: "Check-out Date must be after Check-in date" |"Check-out Date must be after Check-in date" |Pass | Tested through the app menu|
-| TC5 | Error: "Invalid booking status: Booked" | |Fail | |
-| TC6 | Returns 500 (5 nights × 100) | 500| | |
-| TC7 | Error: "Price per night cannot be negative" |ValueError: "Price per night cannot be negative" | | |
+| TC5 | Error: "Invalid booking status: Boked" | ValueError: "Invalid booking status: Boked" | Pass | Corrected test input; original value "Booked" is valid and would not trigger this error |
+| TC6 | Returns 500 (5 nights x 100) | 500 | Pass | Tested via script |
+| TC7 | Error: "Price per night cannot be negative" | ValueError: "Price per night cannot be negative" | Pass | Tested via script |
 | TC8 | Error: "Invalid Booking data in file" |ValueError: "Invalid Booking data in file" | | |
 
 ## 4. Hotel Management Tests
