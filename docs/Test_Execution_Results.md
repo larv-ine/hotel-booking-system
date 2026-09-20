@@ -33,7 +33,7 @@
 | TC5 | Error: "Invalid booking status: Boked" | ValueError: "Invalid booking status: Boked" | Pass | Corrected test input; original value "Booked" is valid and would not trigger this error |
 | TC6 | Returns 500 (5 nights x 100) | 500 | Pass | Tested via script |
 | TC7 | Error: "Price per night cannot be negative" | ValueError: "Price per night cannot be negative" | Pass | Tested via script |
-| TC8 | Error: "Invalid Booking data in file" |ValueError: "Invalid Booking data in file" | | |
+| TC8 | Error: "Invalid Booking data in file" | ValueError: "Invalid Booking data in file" | Pass | Tested via script |
 
 ## 4. Hotel Management Tests
 
