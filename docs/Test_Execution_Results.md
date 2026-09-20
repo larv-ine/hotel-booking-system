@@ -12,13 +12,13 @@
 
 ## 2. Guest Management Tests
 
-| Test ID        | Expected Output                | Actual Output              | Pass/Fail | Comments                   |
-| :------------- | :----------------------------- | :------------------------- | :-------- | :------------------------- |
-| **GUEST-TC01** | Guest registered successfully  | __________________________ | ______    | __________________________ |
-| **GUEST-TC02** | Error when guest ID is empty   | __________________________ | ______    | __________________________ |
-| **GUEST-TC03** | Error when guest name is empty | __________________________ | ______    | __________________________ |
-| **GUEST-TC04** | Error for invalid phone number | __________________________ | ______    | __________________________ |
-| **GUEST-TC05** | Error for invalid email        | __________________________ | ______    | __________________________ |
+| Test ID        | Expected Output                | Actual Output                                                    | Pass/Fail | Comments                   |
+| :------------- | :----------------------------- | :-------------------------                                       | :-------- | :------------------------- |
+| **GUEST-TC01** | Guest registered successfully  | Guest registered successfully.                                   | Pass      | Guest was registered successfully with valid details. |
+| **GUEST-TC02** | Error when guest ID is empty   | Guest ID cannot be empty.                                        | Pass      | System rejected the guest registration when the guest ID was left empty. |
+| **GUEST-TC03** | Error when guest name is empty | Invalid input: Guest name cannot be empty.                       | Pass      | System rejected the registration when the guest name was left empty. |
+| **GUEST-TC04** | Error for invalid phone number | Invalid input: Phone number must contain digits only.            | Pass      | System rejected an invalid phone number and did not register the guest. |
+| **GUEST-TC05** | Error for invalid email        | Invalid input: Email must be a valid address (must contain '@'). | Pass      | System rejected an invalid email address and did not register the guest.|
 
 ## 3. Booking Tests
 
