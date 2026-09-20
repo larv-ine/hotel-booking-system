@@ -72,7 +72,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 
 ## Class 3: Booking
-**Owner:** [Bookings person's name]
+**Owner:** Hazel Awino
 
 **Purpose:** Links a Guest to a Room for a given date range and tracks the booking's status.
 
@@ -138,3 +138,4 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 - Hotel → manages → Booking
 - Booking → references → Room
 - Booking → references → Guest
+
