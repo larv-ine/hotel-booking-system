@@ -44,7 +44,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 ---
 
-## ## Test Cases – Booking
+## Test Cases – Booking
 **Owner:** Hazel Awino
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
@@ -77,3 +77,4 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 
 ---
+
