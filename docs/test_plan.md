@@ -45,15 +45,18 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ---
 
 ## Test Cases – Booking
-**Owner:** [Bookings person's name]
+**Owner:** Hazel Awino
 
 | Test ID | Method Being Tested | Scenario Description | Input(s) | Expected Output / Behaviour |
 |---|---|---|---|---|
-| TC1 | create_booking | Normal valid booking on an available room | room="101" (Available), guest="G1", valid dates | Booking created, room status becomes "Booked" |
-| TC2 | create_booking | Attempt to book an already-booked room | room="101" (status="Booked") | Error: room is not available |
-| TC3 | create_booking | Attempt to book a room that doesn't exist | room="999" | Error: room not found |
-| TC4 | create_booking | Attempt to book with a guest that doesn't exist | guest="G999" | Error: guest not found |
-| TC5 | calculate_total_cost | Check-out date before check-in date | check_in="2026-08-25", check_out="2026-08-20" | Error: check-out must be after check-in |
+| TC1 | `__init__` | Normal valid booking creation | booking_id="B1", guest_id="G1", room_number="101", check_in="2026-09-20", check_out="2026-09-25", status="Booked" | Booking object created successfully with all attributes set correctly |
+| TC2 | `__init__` | Invalid case: empty booking_id | booking_id="" | Error: "Booking ID cannot be empty!" |
+| TC3 | `__init__` | Invalid case: badly formatted date | check_in="20-09-2026" | Error: "Invalid date format! Date must be in YYYY-MM-DD" |
+| TC4 | `__init__` | Edge case: check-out date equal to check-in date | check_in="2026-09-20", check_out="2026-09-20" | Error: "Check-out Date must be after Check-in date" |
+| TC5 | `__init__` | Invalid case: invalid status value | status="Boked" | Error: "Invalid booking status: Boked" |
+| TC6 | `calculate_total_cost` | Normal valid cost calculation | check_in="2026-09-20", check_out="2026-09-25", price_per_night=100 | Returns 500 (5 nights × 100) |
+| TC7 | `calculate_total_cost` | Invalid case: negative price per night | price_per_night=-50 | Error: "Price per night cannot be negative" |
+| TC8 | `from_file_line` | Invalid case: malformed file line (wrong number of fields) | line="B1,G1,101\n" | Error: "Invalid Booking data in file" |
 
 
 ---
@@ -74,3 +77,4 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 
 ---
+

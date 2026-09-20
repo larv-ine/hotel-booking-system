@@ -70,6 +70,7 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 ---
 
+
 ## Class 3: Booking
 **Owner:** [Bookings person's name]
 
@@ -88,8 +89,8 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 ### Methods
 | Method | Parameters | Purpose |
 |---|---|---|
-| `__init__` | booking_id, guest_id, room_number, check_in_date, check_out_date, status | Creates a new Booking object |
-| `calculate_total_cost` | price_per_night | Calculates the number of nights and returns the total stay cost |
+| `__init__` | booking_id, guest_id, room_number, check_in_date, check_out_date, status | Creates a new Booking object; validates that IDs are non-empty, dates are in the correct format, check-out is after check-in, and status is one of the allowed values |
+| `calculate_total_cost` | price_per_night | Returns the total stay cost (nights ├ù price); raises an error if price_per_night is negative |
 | `display_details` | none | Prints the booking's information to the screen |
 | `to_file_line` | none | Converts the booking's data into a line of text for saving to a file |
 | `from_file_line` | line (str) | Rebuilds a Booking object from a saved line of text |
@@ -97,7 +98,6 @@ Project 4 – Hotel Guest Check-In & Room Booking System
 
 
 ---
-
 ## Class 4: Hotel
 **Owner:** [Larvine Mutuku]
 
